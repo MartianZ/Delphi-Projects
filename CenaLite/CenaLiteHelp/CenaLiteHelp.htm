@@ -1,0 +1,151 @@
+<html>
+<!--
+		CenaLite帮助文件
+		Created By Martian 2011年1月16日22:23:40
+-->
+<head>
+
+<style type="text/css">
+body
+{
+	margin-left:30px;
+	font-size:13px;
+}
+a
+{ 
+	blr:expression(this.onFocus=this.blur());
+	text-decoration:none;
+}
+a:hover
+{
+	text-decoration:underline;
+}
+
+.class
+{
+	margin-top:10px;
+	color:#FA6145;
+	font-weight:bold;
+	display:block;
+}
+.question
+{
+	margin-top:3px;
+	color:#333333;
+	display:block;
+}
+.answer
+{
+	color:#666666;
+	display:none;
+	margin-left:20px;
+	margin-top:10px;
+}
+
+</style>
+<script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+<script type="text/javascript">
+function show(t){
+		$('#copyright').hide();
+		$('#'+t).slideToggle("fast");
+}
+</script>
+<script language="JavaScript">
+<!--
+if (window.Event) 
+  document.captureEvents(Event.MOUSEUP); 
+function nocontextmenu() 
+{
+event.cancelBubble = true
+event.returnValue = false;
+return false;
+}
+function norightclick(e) 
+{
+if (window.Event) 
+{
+  if (e.which == 2 || e.which == 3)
+   return false;
+}
+else
+  if (event.button == 2 || event.button == 3)
+  {
+   event.cancelBubble = true
+   event.returnValue = false;
+   return false;
+  }
+} 
+document.oncontextmenu = nocontextmenu;  // for IE5+
+document.onmousedown = norightclick;  // for all others
+//-->
+</script>
+</head>
+
+<body onmousemove="event.returnValue=false;">
+
+<span class="class">▲关于CenaLite</span>
+<a href="javascript:void(0)"><span class="question" onclick="show('1_1')">·&nbsp;什么是CenaLite？</span></a>
+<p class="answer" id="1_1">
+CenaLite开发时即设计为<b>仅供个人练习使用</b>的<b>简易</b>的评测软件，没有繁冗的功能，仅拥有基本的单文件多测试点评测功能与简陋的报表功能。适用于个人练习时评测。<br /><br />
+程序设计开发：CenaEx开发组&nbsp;&nbsp;官方网站：<a href="http://www.cena2.org" target="_blank">http://www.cena2.org</a>
+</p>
+<a href="javascript:void(0)"><span class="question" onclick="show('1_2')">·&nbsp;CenaLite许可协议</span></a>
+<p class="answer" id="1_2">
+CenaLite是一款基于GPL协议(GNU General Public Licens)的开源软件，被授权的源码持有者有权利使用、复制、修改、合并、散布、软件及软件的副本，但是不允许将修改后和衍生的代码做为闭源软件发布或销售！具体条款请访问官方网站：<a href="http://www.cena2.org" target="_blank">http://www.cena2.org</a>
+</p>
+<span class="class">▲如何使用</span>
+<a href="javascript:void(0)"><span class="question" onclick="show('2_1')">·&nbsp;如何添加源码文件？</span></a>
+<p class="answer" id="2_1">
+运行主界面后，将待测程序的源代码文件拖拽到窗体的中央位置即可！支持的文件类型：.c、.cpp、.pas
+</p>
+<a href="javascript:void(0)"><span class="question" onclick="show('2_2')">·&nbsp;如何添加测试点数据？</span></a>
+<p class="answer" id="2_2">
+成功添加源码文件后，将输入文件和输出文件全部选中拖拽到界面中央的Listview控件中即可。<br />
+需要注意的是，您必须先拖拽输入文件到Listview再拖拽输出文件，或者将<b>输入文件和输出文件一并一次拖拽进去</b>[荐]。<br />
+输入文件允许的扩展名：.in或.in*&nbsp;输出文件允许的扩展名：.out或.out*或.ans或.ans*<br />
+程序会自动使用改进后的Lcs算法进行输入文件输出文件的自动匹配，如果出现误匹配的情况，请尽量人为修改输入输出文件名来方便自动匹配。
+</p>
+<a href="javascript:void(0)"><span class="question" onclick="show('2_3')">·&nbsp;如何设置输入、输出文件名？</span></a>
+<p class="answer" id="2_3">
+程序通过正则表达式自动分析源代码文件中的特殊语句来自动分析输入输出文件名。<br /><br />
+请确保您的程序中至少含有以下内容中的两条：<br /><br />
+assign(input,'输入文件名');<br />
+fopen("输入文件名","r");<br />
+freopen("输入文件名","r",######);<br />
+ifstream ######("输入文件名");<br /><br />
+assign(output,'输出文件名');<br />
+fopen("输出文件名","w");<br />
+freopen("输出文件名","w",######);<br />
+ifstream ######("输出文件名");<br /><br />
+如果无法正常匹配，请及时联系我们并提供相关源程序，或者使用CenaEx。
+</p>
+<a href="javascript:void(0)"><span class="question" onclick="show('2_4')">·&nbsp;如何自定义评测点超时时间？如何进行内存限制？如何包含附加文件？</span></a>
+<p class="answer" id="2_4">
+CenaLite中不含有这些功能，请使用CenaEx。请访问官方网站：<a href="http://www.cena2.org" target="_blank">http://www.cena2.org</a>进行下载
+</p>
+<span class="class">▲补充说明</span>
+<a href="javascript:void(0)"><span class="question" onclick="show('3_1')">·&nbsp;CenaLite的计时模式、比较模式</span></a>
+<p class="answer" id="3_1">
+CenaLite的计时方式与CenaEx的快速评测模式中的计时方式一样，请参考CenaEx的相关文档。<br />
+CenaLite的比较方式为：忽略多余的空格和文件尾空行。
+</p><br />
+<div id="copyright" style="color:#999999">
+Copyright &copy; 2010&nbsp;-&nbsp;2011 Project-Cena2
+<div style="display:none"><!--谷歌统计代码-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17629982-2']);
+  _gaq.push(['_setDomainName', '.cena2.org']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</div>
+</div>
+
+</body>
+
+</html>
