@@ -1,4 +1,5 @@
 *.dcu
+.DS_Store
 *.~*~
 *.local
 *.identcache
