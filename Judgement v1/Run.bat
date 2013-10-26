@@ -1,0 +1,1 @@
+Judgement.exe "C:\test33" "C:\test33\data\dataconf2.xml"
